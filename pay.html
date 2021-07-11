@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Braven Shop: Paiement</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/pay.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <div class="container">
+                    <h1 class="text">Paiement en 6 étapes</h1>
+                    <div class="img">
+                        <img src="image/cadenas.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Pour procéder au paiement BravenRP vous conseille de suivre les étapes afin 
+                        de vous garantir une bonne transaction.
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">1) Choisir le/les articles qu'il me faut</h1>
+                    <div class="img">
+                        <img src="image/choix.png" alt="" />
+                    </div>
+                    <p class="text">
+                        Braven Shop vous propose un large choix d'articles. Afin de clarifier votre panier, veillez 
+                        à faire une liste du/des article(s) qu'il vous faut.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <h1 class="text">2) Je me rend dans le vocal "SHOP-PAIEMENT"</h1>
+                    <div class="img">
+                        <img src="image/discord.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Rendez-vous dans l'onglet "SHOP-PAIMENT" sur le discord de BravenRP.
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">3) Je procède au paiement via Paypal</h1>
+                    <div class="img">
+                        <img src="image/paypal.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Rendez-vous sur Paypal ! Ensuite faite un virement à l'adresse "dskrbic@free.fr" du montant de vos artciles.
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">4) Je garde ma preuve de paiement !</h1>
+                    <div class="img">
+                        <img src="image/preuve.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Après votre virement, il est impératif de faire un screen reprenant la date de la transaction, le montant ainsi que l'adresse à laquelle le virement à été effectué. Ce sreen est votre preuve de paiement. Il est donc impératif de l'avoir pour effectuer votre achat in-game. Envoyez-en une copie à l'adresse mail: "nskrbic@outlook.fr"
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">5) J'attend une personne qualifiée</h1>
+                    <div class="img">
+                        <img src="image/discord.jpg" alt="" />
+                    </div>
+                    <p class="text">
+                        Pour vérifier et ainsi procéder à votre achat in-game, attendez une personne qualifiée (STAFF).
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">6) Je reçois mes articles dans les 24 heures !</h1>
+                    <div class="img">
+                        <img src="image/colis.jpg" alt="" />
+                    </div>
+                    <div class="btn">
+                      <a href="https://www.paypal.com/be/webapps/mpp/home?locale.x=fr_BE&kid=p54547111741&gclid=CjwKCAjw-qeFBhAsEiwA2G7Nl74jcrTWa4t5It9_LieTrHw9D8HcyY9fu6IHiGFf_XpNv_bjI-yeexoCZuUQAvD_BwE&gclsrc=aw.ds">Aller vers Paypal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const body = document.body,
+                scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+                height = scrollWrap.getBoundingClientRect().height - 1,
+                speed = 0.04;
+
+            var offset = 0;
+
+            body.style.height = Math.floor(height) + "px";
+
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                scrollWrap.style.transform = scroll;
+
+                callScroll = requestAnimationFrame(smoothScroll);
+            }
+
+            smoothScroll();
+
+            $(function () {
+                var elements = $(".text, .img").toArray();
+                $(window).scroll(function () {
+                    elements.forEach(function (item) {
+                        if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                            $(item).addClass("reveal");
+                        }
+                    });
+                });
+                elements.forEach(function (item) {
+                    if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                        $(item).addClass("reveal");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

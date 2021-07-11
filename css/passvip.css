@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+  background: #131313;
+  font-family: 'Oswald', sans-serif;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+}
+.card{
+  text-align: center;
+  justify-content: center;
+  background: #131313;
+  border: 2px solid white;
+  display: inline-flex;
+  color: white;
+  padding: 20px;
+  height: 550px;
+  width: 300px;
+  margin:  30px;
+  box-shadow: 0 0 20px #B1B1B1;
+}
+.card .title-one h2{
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid white;
+  background: linear-gradient(black, #FFD700);
+}
+
+.card .title-two h2{
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid white;
+  background: linear-gradient(black, #FAF0C5);
+}
+
+.card .title-tree h2{
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid white;
+  background: linear-gradient(black, #b9f2ff);
+}
+
+.card .title-four h2{
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid white;
+  background: linear-gradient(black, #d473d4);
+}
+
+.card .title-one span{
+  font-size: 40px;
+}
+
+.card .title-two span{
+  font-size: 40px;
+}
+
+.card .title-tree span{
+  font-size: 40px;
+}
+
+.card .title-four span{
+  font-size: 40px;
+}
+
+.infos ul{
+  margin-top: 10px;
+}
+
+.infos ul li{
+  list-style: none;
+}
+
+.infos ul li img{
+  margin-right: 10px;
+}
+
+.btn{
+  text-align: center;
+  margin-top: 60px;
+}
+
+.btn a{
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  transition: 0.3s;
+}
+
+.btn a:hover{
+  color: #131313;
+  border: 2px solid white;
+  background: white;
+}
+
+.btn-two{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-two a{
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  transition: 0.3s;
+}
+
+.btn-two a:hover{
+  color: #131313;
+  border: 2px solid white;
+  background: white;
+}

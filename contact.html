@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Braven Shop: Contact</title>
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="wrapper">
+      <div class="project-list">
+        <div class="project p-1">
+          <div class="project-title"><h1>Jackson Purge</h1></div>
+          <div class="project-categ">Fondateur & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project p-2">
+          <div class="project-title"><h1>Eddy McCarthy</h1></div>
+          <div class="project-categ">Co-Fondateur & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project p-3">
+          <div class="project-title"><h1>Arron Diguer</h1></div>
+          <div class="project-categ">Co-Fondateur & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project p-4">
+          <div class="project-title"><h1>Steve Layer</h1></div>
+          <div class="project-categ">Co-Fondateur & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project p-5">
+          <div class="project-title"><h1>Frank Wilson</h1></div>
+          <div class="project-categ">Responsable Staff & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="project p-6">
+          <div class="project-title"><h1>Hector Garcia</h1></div>
+          <div class="project-categ">Web Dévelopement & Administration</div>
+          <div class="project-overlay"></div>
+        </div>
+      </div>
+    </div>
+    <div class="btn">
+      <a href="https://discord.gg/PjcTkUucNm">Aller sur discord</a>
+    </div>
+    <script>
+      var $cursor = $(".cursor"),
+        $overlay = $(".project-overlay");
+
+      function moveCircle(e) {
+        TweenLite.to($cursor, 0.5, {
+          css: {
+            left: e.pageX,
+            top: e.pageY
+          },
+          delay: 0.03
+        });
+      }
+
+      $(".p-1").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://images5.alphacoders.com/596/596927.jpg)" });
+      });
+      $(".p-2").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://images5.alphacoders.com/596/596924.jpg)" });
+      });
+      $(".p-3").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://images2.alphacoders.com/853/853424.jpg)" });
+      });
+      $(".p-4").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://presidence-de-la-republique-de-los-santos3.webnode.fr/_files/200000106-adbebaeaed/7ffeb3031f2fd3ab42f2f21ffbd0e1c0.png)" });
+      });
+      $(".p-5").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://www.itl.cat/pngfile/big/63-635279_grand-theft-auto-gta-v-rain.jpg)" });
+      });
+      $(".p-6").hover(function() {
+        $(".cursor").css({ "background-image": "url(https://images5.alphacoders.com/849/thumb-1920-849437.jpg)" });
+      });
+
+      var flag = false;
+      $($overlay).mousemove(function() {
+        flag = true;
+        TweenLite.to($cursor, 0.3, { scale: 1, autoAlpha: 1 });
+        $($overlay).on("mousemove", moveCircle);
+      });
+
+      $($overlay).mouseout(function() {
+        flag = false;
+        TweenLite.to($cursor, 0.3, { scale: 0.1, autoAlpha: 0 });
+      });
+    </script>
+  </body>
+</html>

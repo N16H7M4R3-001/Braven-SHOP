@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Braven Shop: Accueil</title>
+      <link rel="stylesheet" href="css/categ.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+      <div class="logo-braven">
+            <img src="image/logo_Braven.png" height="300" width="550">
+      </div>
+      <div class="nav-wrapper">
+            <nav>
+                  <a href="carshop.html" class="hover-this"><span>Carshop</span></a>
+                  <a href="gunshop.html" class="hover-this"><span>Gunshop</span></a>
+                  <a href="bvcoins.html" class="hover-this"><span>Bv-Coins</span></a>
+                  <a href="bravenpass.html" class="hover-this"><span>Braven pass</span></a>
+                  <a href="contact.html" class="hover-this"><span>Contact</span></a>
+                  <div class="cursor"></div>
+            </nav>
+            <div class="CGA">
+              <h3>conditions générales d'achat ci-dessous</h3>
+            </div>
+      </div>
+      <footer>
+            <div class="logo">
+                  <img src="image/logo_Braven.png" height="50px" width="85px">
+            </div>
+            <div class="pay-conditions">
+                  <p>Braven offre la possibilitée à sa clientèle d'effectuer des achats via sont site officiel qui est "Braven Shop". Tout client entrant dans le site est considéré comme d'accord avec les <strong><u>conditions générales d'achat du serveur (CGA)</u></strong>. Ces CGA sont:  Tout client entrant dans le site est considéré comme majeur et responsable de ses actes. Il n'y aura donc aucun remboursement d'achat effectué sans accord parental. Lors de virement via Paypal veillez à garder une copie de votre preuve de paiement comme indiquée dans la partie Paiement du site. Toute preuves de paiement manquantes engendrera un refus d'achat in-game. De plus, Braven décline toute respnsabilité d'erreur de transaction due à Paypal. Cependant Braven s'engage à fournir à sa clientèle un service irréprochable.</p>
+            </div>
+      </footer>
+<script>
+
+(function () {
+
+      const link = document.querySelectorAll('nav > .hover-this');
+      const cursor = document.querySelector('.cursor');
+
+      const animateit = function (e) {
+            const span = this.querySelector('span');
+            const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+
+            move = 25,
+            xMove = x / width * (move * 2) - move,
+            yMove = y / height * (move * 2) - move;
+
+            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+            if (e.type === 'mouseleave') span.style.transform = '';
+      };
+
+      const editCursor = e => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+      };
+
+      link.forEach(b => b.addEventListener('mousemove', animateit));
+      link.forEach(b => b.addEventListener('mouseleave', animateit));
+      window.addEventListener('mousemove', editCursor);
+
+})();
+
+</script>
+</body>
+</html>

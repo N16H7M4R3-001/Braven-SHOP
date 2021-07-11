@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Braven Shop: Carshop</title>
+        <link rel="stylesheet" href="css/slider.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <section>
+                    <div>
+                        <img src="image/rs3.jpg" />
+                        <h1>Audi RS3</h1>
+                        <p>
+                           L'Audi RS3 est une voiture de la catégorie "sportive" et est disponible à l'achat pour 500 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/rs7abt.jpg" />
+                        <h1>Audi RS7 ABT</h1>
+                        <p>
+                            L'Audi RS7 ABT est une voiture de la catégorie "sportive" et est disponible à l'achat pour 700 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/g65.jpg" />
+                        <h1>Mercedes-Benz G65 AMG</h1>
+                        <p>
+                            Le Mercedes-Benz G65 AMG est une voiture de la catégorie "sportive" et est disponible à l'achat pour 650 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/ferrariaperta.jpg" />
+                        <h1>Ferrari aperta</h1>
+                        <p>
+                            La Ferrari aperta est une voiture de la catégorie "supersportive" et est disponible à l'achat pour 1500 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/huracan.jpg" />
+                        <h1>Lamborghini huracan</h1>
+                        <p>
+                            La Lamborghini huracan est une voiture de la catégorie "supersportive" et est disponible à l'achat pour 1500 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/urus.jpg" />
+                        <h1>Lamborghini urus</h1>
+                        <p>
+                            Le Lamborghini urus est une voiture de la catégorie "supersportive" et est disponible à l'achat pour 1000 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/svj.jpg" />
+                        <h1>Lamborghini svj</h1>
+                        <p>
+                            La Lamborghini svj est une voiture de la catégorie "supersportive" et est disponible à l'achat pour 2500 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/p1.jpg" />
+                        <h1>Mclaren p1</h1>
+                        <p>
+                            La Mclaren p1 est une voiture de la catégorie "supersportive" et est disponible à l'achat pour  2000 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/mclaren720stc.jpg" />
+                        <h1>Mclaren 720 stc</h1>
+                        <p>
+                            La Mclaren 720 stc est une voiture de la catégorie "supersportive" et est disponible à l'achat pour  1250 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/veyron.jpg" />
+                        <h1>Bugatti veyron</h1>
+                        <p>
+                            La Bugatti veyron est une voiture de la catégorie "supersportive" et est disponible à l'achat pour 3000 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/supra.jpg" />
+                        <h1>Toyota Supra</h1>
+                        <p>
+                            La Toyota Supra est une voiture de la catégorie "Gran Turismo" et est disponible à l'achat pour 2800 BV-COINS.
+                        </p>
+                    </div>
+                </section>
+                <div class="btn">
+                  <a href="pay.html">Aller vers Paiement</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const body = document.body,
+                scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+                height = scrollWrap.getBoundingClientRect().height - 1,
+                speed = 0.04;
+
+            var offset = 0;
+
+            body.style.height = Math.floor(height) + "px";
+
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                scrollWrap.style.transform = scroll;
+
+                callScroll = requestAnimationFrame(smoothScroll);
+            }
+
+            smoothScroll();
+            const content = document.querySelector("section");
+            let currentPos = window.pageYOffset;
+
+            const callDistort = function () {
+                const newPos = window.pageYOffset;
+                const diff = newPos - currentPos;
+                const speed = diff * 0.35;
+
+                content.style.transform = "skewY(" + speed + "deg)";
+                currentPos = newPos;
+                requestAnimationFrame(callDistort);
+            };
+
+            callDistort();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Braven Shop: Gunshop</title>
+        <link rel="stylesheet" href="css/slider.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <section>
+                    <div>
+                        <img src="image/beretta.jpg" />
+                        <h1>Beretta</h1>
+                        <p>
+                            Le Beretta fait partie de la catégorie "arme de poing" et est disponible à l'achat pour 200 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/olympia.jpg" />
+                        <h1>Olympia</h1>
+                        <p>
+                           L'Olympia fait partie de la catégorie "fusil à pompe" et est disponible à l'achat pour 400 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/mp7.jpg" />
+                        <h1>MP7</h1>
+                        <p>
+                            La MP7 fait partie de la catégorie "SMG" et est disponible à l'achat pour 600 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/ppsh.jpg" />
+                        <h1>PPSH</h1>
+                        <p>
+                            La PPSH fait partie de la catégorie "SMG" et est disponible à l'achat pour 800 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/ak-47.jpg" />
+                        <h1>AK-47</h1>
+                        <p>
+                            L'AK-47 fait partie de la catégorie "fusil d'assault" et est disponible à l'achat pour 900 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/mitrailleuse.jpg" />
+                        <h1>Mitrailleuse normale</h1>
+                        <p>
+                            La Mitraillause normale fait partie de la catégorie "arme lourde" et est disponible à l'achat pour 3000 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/tec-9.jpg" />
+                        <h1>TEC-9</h1>
+                        <p>
+                            Le TEC-9 fait partie de la catégorie "pistolet mitrailleur" et est disponible à l'achat pour 500 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/scorpion.jpg" />
+                        <h1>Scorpion evo-3</h1>
+                        <p>
+                            La Scorpion evo-3 fait partie de la catégorie "SMG" et est disponible à l'achat pour 700 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/revolver.jpg" />
+                        <h1>Revolver</h1>
+                        <p>
+                            Le Revolver fait partie de la catégorie "arme de poing" et est disponible à l'achat pour 750 BV-COINS.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="image/desert.jpg" />
+                        <h1>Desert eagle</h1>
+                        <p>
+                            Le Desert eagle fait partie de la catégorie "arme de poing" et est disponible à l'achat pour 500 BV-COINS.
+                        </p>
+                    </div>
+                </section>
+                <div class="btn">
+                  <a href="pay.html">Aller vers Paiement</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const body = document.body,
+                scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+                height = scrollWrap.getBoundingClientRect().height - 1,
+                speed = 0.04;
+
+            var offset = 0;
+
+            body.style.height = Math.floor(height) + "px";
+
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                scrollWrap.style.transform = scroll;
+
+                callScroll = requestAnimationFrame(smoothScroll);
+            }
+
+            smoothScroll();
+            const content = document.querySelector("section");
+            let currentPos = window.pageYOffset;
+
+            const callDistort = function () {
+                const newPos = window.pageYOffset;
+                const diff = newPos - currentPos;
+                const speed = diff * 0.35;
+
+                content.style.transform = "skewY(" + speed + "deg)";
+                currentPos = newPos;
+                requestAnimationFrame(callDistort);
+            };
+
+            callDistort();
+        </script>
+    </body>
+</html>
